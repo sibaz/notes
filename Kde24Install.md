@@ -31,6 +31,9 @@ One thing I don't remember from tw days, is you need to `sudo` to use it, otherw
 2) sudo storcli /c0/fall import           # Will scan available UGood disks, to identify and Raid arrays, that are otherwise inaccessible
 3) sudo storcli /c0/e68/s3 set online     # Will add a UGood disk, back to the now available raid array, making it degraded but available
 
+##### When you've increased the size of the disks in the array
+1) sudo storcli /c0/v0 start expand size=Full  # To tell the controller to increate the VDisk size, to fill the disks
+
 ## nvidia drivers
 
 It seems a new tool has appeared called `ubuntu-drivers` that manages some 3rd Party drivers.  `sudo ubuntu-drivers install nvidia:570` seemed to be the required command to have it setup the nvidia drivers properly
