@@ -20,12 +20,13 @@ One thing I don't remember from tw days, is you need to `sudo` to use it, otherw
 2) `sudo storcli /c0 show bootdrive`      # Show which device is the one to boot from, when the bios boots from the raid controller
 3) `sudo storcli /c0/v0 set bootdrive=on` # Select v0 (the volume assigned to the d0 raid array at time of writing) as bootable
 4) `sudo storcli /cx/e68/s1 set jbod`     # If you connect a fresh drive, enable jbod mode to see it
-5) `sudo storcli /cx/eall/s1 del jbod`    # If you subsequently want to use it, in a drive set, you need remove jbod mode first
-6) `sudo storcli /c0/e68/s1 help`         # As long as you use the full path, not `eall` you can get context relevant commands using help
-7) `sudo storcli /c0/d0 show`             # To get details on an existing drive set.  Notice the Dg Arr and Row columns to see if a disk is missing.  
-8) `sudo storcli /c0/e68/s1 insert dg=0 array=0 row=0` # To insert the unused disk, in slot 1, into the 0th Drive set, in the 0:0 location
-9) `sudo storcli /c0/eall/s1 show rebuild` # See how much longer before all data has been copied to the new disk, promoting the Drive set from Degraded to Online
-9) `sudo storcli /c0/eall/sall show rebuild` # Show how long left, before the new disk has been rebuild with the old data
+5) `sudo storcli /c0/eall/s1 set bootdrive=on` # To set the new jbod as the one to boot from on next startup
+6) `sudo storcli /cx/eall/s1 del jbod`    # If you subsequently want to use it, in a drive set, you need remove jbod mode first
+7) `sudo storcli /c0/e68/s1 help`         # As long as you use the full path, not `eall` you can get context relevant commands using help
+8) `sudo storcli /c0/d0 show`             # To get details on an existing drive set.  Notice the Dg Arr and Row columns to see if a disk is missing.
+9) `sudo storcli /c0/e68/s1 insert dg=0 array=0 row=0` # To insert the unused disk, in slot 1, into the 0th Drive set, in the 0:0 location
+1) `sudo storcli /c0/eall/s1 show rebuild` # See how much longer before all data has been copied to the new disk, promoting the Drive set from Degraded to Online
+2) `sudo storcli /c0/eall/sall show rebuild` # Show how long left, before the new disk has been rebuild with the old data
 
 ##### When things break:-
 1) `sudo storcli /c0/e68/s3 set good`       # Will change a disk from UBad to UGood
