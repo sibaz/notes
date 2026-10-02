@@ -27,4 +27,10 @@ I've seen examples to set this up in python, but all seem to assume a tx and rx 
 
 it remains to be seen, what sort of actual connectivity is available.  My gut is, this isnt going to manifest as a hardware/kernel module, but instead require user mode coms with the serial device to actually make it work.  That fits with the fact that these pi hat devices seem to have independant on/off switches and batteries
 
+# MeshCore
 
+See How to get started on https://github.com/meshcore-dev/MeshCore
+
+It seems to provide precompiled firmware for the sx1262 based hat on rpipico.  Not sure if this will work on pico2, or how easy it might be to recompile.  Worth a look.  
+
+Beyond, having both the pico2 and the rpi5 hat installed, and noticing I have x2 working serial devices, which dropped to 2 when I disconnected the pico, I've still not managed to do anything that confirms my hardware actually works.  
